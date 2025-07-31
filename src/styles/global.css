@@ -26,7 +26,7 @@ body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
   color: var(--color-dark);
-  background-color: var(--color-light);
+  background: transparent; /* Changed from background-color to transparent */
   cursor: auto; /* Default cursor */
 }
 
@@ -141,9 +141,13 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 20px var(--color-shadow);
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
   z-index: 1000;
   transition: var(--transition-smooth);
 }
@@ -163,6 +167,7 @@ body {
   color: var(--color-sage);
   text-decoration: none;
   transition: var(--transition-smooth);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-logo:hover {
@@ -183,16 +188,18 @@ body {
 .navbar-link {
   text-decoration: none;
   color: var(--color-dark);
-  font-weight: 500;
+  font-weight: 600;
   padding: 8px 16px;
   border-radius: 8px;
   transition: var(--transition-smooth);
+  text-shadow: 0.5px 0.5px 1px rgba(255, 255, 255, 0.3);
 }
 
 .navbar-link:hover,
 .navbar-link.active {
   color: var(--color-orange);
-  background: rgba(255, 179, 102, 0.1);
+  background: rgba(255, 179, 102, 0.2);
+  box-shadow: 0 2px 8px rgba(255, 179, 102, 0.3);
 }
 
 .navbar-toggle {
@@ -296,17 +303,25 @@ body {
 
 /* Card Styles */
 .card {
-  background: var(--color-light);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: var(--border-radius);
   padding: 2rem;
-  box-shadow: 0 8px 30px var(--color-shadow);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
   transition: var(--transition-smooth);
   text-align: center;
 }
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 15px 40px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 .card-icon {
@@ -332,7 +347,12 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: var(--border-radius);
-  box-shadow: 0 8px 30px var(--color-shadow);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .image-container img {
@@ -340,6 +360,12 @@ body {
   height: 300px;
   object-fit: cover;
   transition: var(--transition-smooth);
+}
+
+.image-container:hover {
+  box-shadow: 
+    0 15px 40px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 .image-container:hover img {
@@ -358,12 +384,20 @@ body {
   cursor: pointer;
   border-radius: var(--border-radius);
   overflow: hidden;
-  box-shadow: 0 8px 30px var(--color-shadow);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   transition: var(--transition-smooth);
 }
 
 .gallery-item:hover {
   transform: scale(1.05);
+  box-shadow: 
+    0 15px 40px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 .gallery-item img {
@@ -449,10 +483,15 @@ body {
 
 /* Contact Form */
 .contact-form {
-  background: var(--color-cream);
+  background: rgba(245, 243, 240, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 3rem;
   border-radius: var(--border-radius);
-  box-shadow: 0 8px 30px var(--color-shadow);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 .form-group {
@@ -836,16 +875,24 @@ body {
 }
 
 .menu-item {
-  background: white;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: var(--border-radius);
   overflow: hidden;
-  box-shadow: 0 8px 30px var(--color-shadow);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
   cursor: pointer;
   transition: var(--transition-smooth);
 }
 
 .menu-item:hover {
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 15px 40px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 .menu-item-image {
@@ -1152,4 +1199,51 @@ body {
 
 .animate-zoomIn {
   animation: zoomIn 0.6s ease-out;
+}
+
+/* Sectiuni cu fundal pentru lizibilitate pe fundalul natural */
+.section {
+  position: relative;
+  z-index: 1;
+  background: transparent !important;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  z-index: -1;
+}
+
+.section[style*="background"] {
+  background: transparent !important;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+.section[style*="background"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(245, 243, 240, 0.1) !important;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  z-index: -1;
 }

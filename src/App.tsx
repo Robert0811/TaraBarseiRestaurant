@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -6,6 +7,7 @@ import FloatingActionMenu from './components/FloatingActionMenu';
 import LoadingAnimation from './components/LoadingAnimation';
 import PWAInstallPrompt from './components/PWAInstallPrompt';
 import PageTransition from './components/PageTransition';
+import NatureBackground from './components/NatureBackground';
 import Home from './pages/Home';
 import Restaurant from './pages/Restaurant';
 import Terasa from './pages/Terasa';
@@ -16,6 +18,21 @@ import Menu from './pages/Menu';
 import { usePWA } from './hooks/usePWA';
 import './styles/global.css';
 import './styles/3d-effects.css';
+
+// Component to handle scroll to top on route change
+function ScrollToTopOnRouteChange() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
   // Initialize PWA hooks
@@ -28,7 +45,9 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
+      <ScrollToTopOnRouteChange />
+      <div className="App relative">
+        <NatureBackground />
         <LoadingAnimation />
         <PWAInstallPrompt onInstall={handlePWAInstall} />
         <Navbar />

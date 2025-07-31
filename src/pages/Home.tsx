@@ -6,7 +6,6 @@ import AnimatedCounter from '../components/AnimatedCounter';
 import TiltCard from '../components/TiltCard';
 import GlassmorphismCard from '../components/GlassmorphismCard';
 import ParticleSystem from '../components/ParticleSystem';
-import Restaurant3DScene from '../components/Restaurant3DScene';
 import ScrollAnimation from '../components/ScrollAnimation';
 import AdvancedParallax from '../components/AdvancedParallax';
 import TiltCard3D from '../components/TiltCard3D';
@@ -129,17 +128,6 @@ const Home = () => {
               </div>
             </AdvancedParallax>
           </ScrollAnimation>
-        </div>
-      </section>
-
-      {/* 3D Restaurant Scene */}
-      <section className="section" style={{ background: 'var(--color-cream)' }}>
-        <div className="container">
-          <h2 className="section-title text-3d">Experiență 3D Interactivă</h2>
-          <p className="section-subtitle">
-            Explorează restaurantul nostru într-un mod cu totul nou
-          </p>
-          <Restaurant3DScene />
         </div>
       </section>
 
