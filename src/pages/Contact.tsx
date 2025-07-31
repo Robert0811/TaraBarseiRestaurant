@@ -28,9 +28,9 @@ const Contact: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
 
-  const headerRef = useScrollAnimation();
-  const formRef = useScrollAnimation();
-  const infoRef = useScrollAnimation();
+  const headerRef = useScrollAnimation<HTMLDivElement>();
+  const formRef = useScrollAnimation<HTMLDivElement>();
+  const infoRef = useScrollAnimation<HTMLDivElement>();
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
@@ -157,8 +157,8 @@ const Contact: React.FC = () => {
                   <div>
                     <h3 style={{ marginBottom: '0.5rem' }}>Telefon</h3>
                     <p>
-                      <a href="tel:+40123456789" style={{ color: 'var(--color-dark)', textDecoration: 'none' }}>
-                        +40 123 456 789
+                      <a href="tel:+40745105465" style={{ color: 'var(--color-dark)', textDecoration: 'none' }}>
+                        (0745) 105 465
                       </a>
                     </p>
                   </div>

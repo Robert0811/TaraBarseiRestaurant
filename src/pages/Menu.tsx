@@ -6,7 +6,7 @@ import ParallaxSection from '../components/ParallaxSection';
 import { ChefHat, Star, Award } from 'lucide-react';
 
 const Menu: React.FC = () => {
-  const headerRef = useScrollAnimation();
+  const headerRef = useScrollAnimation<HTMLDivElement>();
 
   return (
     <div className="menu-page">

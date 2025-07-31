@@ -28,8 +28,8 @@ const Galerie: React.FC = () => {
   const [filter, setFilter] = useState('toate');
   const [filteredImages, setFilteredImages] = useState(images);
   const [lightboxImage, setLightboxImage] = useState<Image | null>(null);
-  const headerRef = useScrollAnimation();
-  const galleryRef = useScrollAnimation();
+  const headerRef = useScrollAnimation<HTMLDivElement>();
+  const galleryRef = useScrollAnimation<HTMLDivElement>();
 
   useEffect(() => {
     if (filter === 'toate') {

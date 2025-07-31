@@ -4,10 +4,10 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { Users, Heart, Gift, Briefcase, Music, Camera, Utensils, Car } from 'lucide-react';
 
 const Evenimente: React.FC = () => {
-  const heroRef = useScrollAnimation();
-  const typesRef = useScrollAnimation();
-  const benefitsRef = useScrollAnimation();
-  const galleryRef = useScrollAnimation();
+  const heroRef = useScrollAnimation<HTMLDivElement>();
+  const typesRef = useScrollAnimation<HTMLDivElement>();
+  const benefitsRef = useScrollAnimation<HTMLDivElement>();
+  const galleryRef = useScrollAnimation<HTMLDivElement>();
 
   return (
     <div className="evenimente-page">
@@ -177,7 +177,7 @@ const Evenimente: React.FC = () => {
               <Link to="/contact" className="btn btn-primary">
                 Solicită ofertă
               </Link>
-              <a href="tel:+40123456789" className="btn btn-secondary">
+              <a href="tel:+40745105465" className="btn btn-secondary">
                 Sună acum
               </a>
             </div>

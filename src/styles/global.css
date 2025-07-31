@@ -96,6 +96,7 @@ body {
   box-shadow: 0 4px 15px var(--color-shadow);
   position: relative;
   overflow: hidden;
+  transform: translateY(0);
 }
 
 .btn::before {
@@ -114,6 +115,15 @@ body {
 .btn:hover::before {
   width: 300px;
   height: 300px;
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.02);
+}
+
+.btn:active {
+  transform: translateY(-1px) scale(0.98);
+  transition: all 0.1s ease;
 }
 
 .btn-primary {
@@ -302,26 +312,93 @@ body {
 }
 
 /* Card Styles */
+/* Action Buttons Container */
+.action-buttons-container {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 1.5rem !important;
+  margin-top: 3rem !important;
+  flex-wrap: wrap !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
+@media (max-width: 768px) {
+  .action-buttons-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* Cards */
 .card {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: var(--border-radius);
-  padding: 2rem;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 2.5rem;
   box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.4);
-  transition: var(--transition-smooth);
+    0 8px 25px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-8px) scale(1.02);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 
-    0 15px 40px rgba(0, 0, 0, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    0 15px 40px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 0 25px rgba(255, 179, 102, 0.08);
+}
+
+.card-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, rgba(255, 179, 102, 0.25), rgba(255, 179, 102, 0.05));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  border: 1px solid rgba(255, 179, 102, 0.2);
+  transition: all 0.3s ease;
+  color: #D2691E;
+}
+
+.card:hover .card-icon {
+  background: linear-gradient(135deg, rgba(255, 179, 102, 0.35), rgba(255, 179, 102, 0.15));
+  border-color: rgba(255, 179, 102, 0.4);
+  transform: scale(1.05);
+}
+
+.card h3 {
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.card p {
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Shine Effect */
+.shine-effect:hover .shine-overlay {
+  opacity: 1;
 }
 
 .card-icon {

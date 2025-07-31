@@ -16,13 +16,13 @@ const FloatingActionMenu: React.FC = () => {
     {
       icon: <Phone size={20} />,
       label: 'Sună acum',
-      action: () => window.open('tel:+40123456789'),
+      action: () => window.open('tel:+40745105465'),
       color: '#25D366'
     },
     {
       icon: <MessageCircle size={20} />,
       label: 'WhatsApp',
-      action: () => window.open('https://wa.me/40123456789'),
+      action: () => window.open('https://wa.me/40745105465'),
       color: '#25D366'
     },
     {

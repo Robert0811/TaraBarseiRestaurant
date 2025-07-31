@@ -8,6 +8,7 @@ import LoadingAnimation from './components/LoadingAnimation';
 import PWAInstallPrompt from './components/PWAInstallPrompt';
 import PageTransition from './components/PageTransition';
 import NatureBackground from './components/NatureBackground';
+import InteractiveParticles from './components/InteractiveParticles';
 import Home from './pages/Home';
 import Restaurant from './pages/Restaurant';
 import Terasa from './pages/Terasa';
@@ -48,6 +49,7 @@ function App() {
       <ScrollToTopOnRouteChange />
       <div className="App relative">
         <NatureBackground />
+        <InteractiveParticles />
         <LoadingAnimation />
         <PWAInstallPrompt onInstall={handlePWAInstall} />
         <Navbar />

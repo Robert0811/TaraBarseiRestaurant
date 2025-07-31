@@ -3,12 +3,12 @@ import { motion } from 'framer-motion';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import ParallaxSection from '../components/ParallaxSection';
 import AnimatedCounter from '../components/AnimatedCounter';
-import TiltCard from '../components/TiltCard';
-import GlassmorphismCard from '../components/GlassmorphismCard';
 import ParticleSystem from '../components/ParticleSystem';
 import ScrollAnimation from '../components/ScrollAnimation';
 import AdvancedParallax from '../components/AdvancedParallax';
 import TiltCard3D from '../components/TiltCard3D';
+import ShineEffect from '../components/ShineEffect';
+import RippleEffect from '../components/RippleEffect';
 import { Star, Award, Users, Utensils, Car, Wifi, Music, Heart } from 'lucide-react';
 
 const Home = () => {
@@ -50,12 +50,16 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <Link to="/contact" className="btn btn-primary">
-              Rezervă o masă
-            </Link>
-            <Link to="/galerie" className="btn btn-secondary">
-              Vezi galeria
-            </Link>
+            <RippleEffect>
+              <Link to="/contact" className="btn btn-primary">
+                Rezervă o masă
+              </Link>
+            </RippleEffect>
+            <RippleEffect>
+              <Link to="/galerie" className="btn btn-secondary">
+                Vezi galeria
+              </Link>
+            </RippleEffect>
           </motion.div>
         </motion.div>
       </ParallaxSection>
@@ -136,8 +140,8 @@ const Home = () => {
         <div className="container">
           <h2 className="section-title">De ce să ne alegi?</h2>
           <div className={`grid-4 ${featuresRef.isVisible ? 'animate-zoomIn' : ''}`} ref={featuresRef.ref as React.RefObject<HTMLDivElement>}>
-            <GlassmorphismCard>
-              <TiltCard>
+            <ShineEffect>
+              <TiltCard3D intensity={0.8} glare={true}>
                 <div className="card">
                   <div className="card-icon">
                     <Star size={30} />
@@ -145,10 +149,10 @@ const Home = () => {
                   <h3>Calitate Premium</h3>
                   <p>Ingrediente proaspete și preparate cu atenție pentru o experiență culinară de excepție.</p>
                 </div>
-              </TiltCard>
-            </GlassmorphismCard>
-            <GlassmorphismCard>
-              <TiltCard>
+              </TiltCard3D>
+            </ShineEffect>
+            <ShineEffect>
+              <TiltCard3D intensity={0.8} glare={true}>
                 <div className="card">
                   <div className="card-icon">
                     <Award size={30} />
@@ -156,10 +160,10 @@ const Home = () => {
                   <h3>Experiență & Tradiție</h3>
                   <p>Rețete tradiționale românești îmbunătățite cu tehnici culinare moderne.</p>
                 </div>
-              </TiltCard>
-            </GlassmorphismCard>
-            <GlassmorphismCard>
-              <TiltCard>
+              </TiltCard3D>
+            </ShineEffect>
+            <ShineEffect>
+              <TiltCard3D intensity={0.8} glare={true}>
                 <div className="card">
                   <div className="card-icon">
                     <Users size={30} />
@@ -167,10 +171,10 @@ const Home = () => {
                   <h3>Evenimente Private</h3>
                   <p>Organizăm nunți, botezuri și evenimente corporative cu servicii complete.</p>
                 </div>
-              </TiltCard>
-            </GlassmorphismCard>
-            <GlassmorphismCard>
-              <TiltCard>
+              </TiltCard3D>
+            </ShineEffect>
+            <ShineEffect>
+              <TiltCard3D intensity={0.8} glare={true}>
                 <div className="card">
                   <div className="card-icon">
                     <Heart size={30} />
@@ -178,8 +182,8 @@ const Home = () => {
                   <h3>Atmosferă Caldă</h3>
                   <p>Un ambient prietenos și relaxant, perfect pentru orice ocazie specială.</p>
                 </div>
-              </TiltCard>
-            </GlassmorphismCard>
+              </TiltCard3D>
+            </ShineEffect>
           </div>
         </div>
       </section>
@@ -192,59 +196,89 @@ const Home = () => {
             Oferim toate facilitățile necesare pentru o experiență completă
           </p>
           <div className={`grid-3 ${facilitiesRef.isVisible ? 'animate-fadeInUp' : ''}`} ref={facilitiesRef.ref as React.RefObject<HTMLDivElement>}>
-            <div className="card">
-              <div className="card-icon">
-                <Utensils size={30} />
-              </div>
-              <h3>Salon Interior</h3>
-              <p>60 de locuri în salon, amenajat în stil rustic elegant cu toate facilitățile moderne.</p>
-            </div>
-            <div className="card">
-              <div className="card-icon">
-                <Users size={30} />
-              </div>
-              <h3>Terasă Panoramică</h3>
-              <p>70 de locuri pe terasă cu cascadă decorativă și vii de vie pentru o experiență unică.</p>
-            </div>
-            <div className="card">
-              <div className="card-icon">
-                <Car size={30} />
-              </div>
-              <h3>Parcare Gratuită</h3>
-              <p>Spațiu generos de parcare gratuită pentru toți oaspeții restaurantului.</p>
-            </div>
-            <div className="card">
-              <div className="card-icon">
-                <Wifi size={30} />
-              </div>
-              <h3>WiFi Gratuit</h3>
-              <p>Internet gratuit de mare viteză pentru oaspeții noștri.</p>
-            </div>
-            <div className="card">
-              <div className="card-icon">
-                <Music size={30} />
-              </div>
-              <h3>Muzică Live</h3>
-              <p>Seri cu muzică live și atmosferă de neuitat în weekenduri.</p>
-            </div>
-            <div className="card">
-              <div className="card-icon">
-                <Heart size={30} />
-              </div>
-              <h3>Evenimente Private</h3>
-              <p>Organizarea completă a nunților, botezurilor și evenimentelor corporative.</p>
-            </div>
+            <ShineEffect>
+              <TiltCard3D intensity={0.7} glare={true}>
+                <div className="card">
+                  <div className="card-icon">
+                    <Utensils size={30} />
+                  </div>
+                  <h3>Salon Interior</h3>
+                  <p>60 de locuri în salon, amenajat în stil rustic elegant cu toate facilitățile moderne.</p>
+                </div>
+              </TiltCard3D>
+            </ShineEffect>
+            <ShineEffect>
+              <TiltCard3D intensity={0.7} glare={true}>
+                <div className="card">
+                  <div className="card-icon">
+                    <Users size={30} />
+                  </div>
+                  <h3>Terasă Panoramică</h3>
+                  <p>70 de locuri pe terasă cu cascadă decorativă și vii de vie pentru o experiență unică.</p>
+                </div>
+              </TiltCard3D>
+            </ShineEffect>
+            <ShineEffect>
+              <TiltCard3D intensity={0.7} glare={true}>
+                <div className="card">
+                  <div className="card-icon">
+                    <Car size={30} />
+                  </div>
+                  <h3>Parcare Gratuită</h3>
+                  <p>Spațiu generos de parcare gratuită pentru toți oaspeții restaurantului.</p>
+                </div>
+              </TiltCard3D>
+            </ShineEffect>
+            <ShineEffect>
+              <TiltCard3D intensity={0.7} glare={true}>
+                <div className="card">
+                  <div className="card-icon">
+                    <Wifi size={30} />
+                  </div>
+                  <h3>WiFi Gratuit</h3>
+                  <p>Internet gratuit de mare viteză pentru oaspeții noștri.</p>
+                </div>
+              </TiltCard3D>
+            </ShineEffect>
+            <ShineEffect>
+              <TiltCard3D intensity={0.7} glare={true}>
+                <div className="card">
+                  <div className="card-icon">
+                    <Music size={30} />
+                  </div>
+                  <h3>Muzică Live</h3>
+                  <p>Seri cu muzică live și atmosferă de neuitat în weekenduri.</p>
+                </div>
+              </TiltCard3D>
+            </ShineEffect>
+            <ShineEffect>
+              <TiltCard3D intensity={0.7} glare={true}>
+                <div className="card">
+                  <div className="card-icon">
+                    <Heart size={30} />
+                  </div>
+                  <h3>Evenimente Private</h3>
+                  <p>Organizarea completă a nunților, botezurilor și evenimentelor corporative.</p>
+                </div>
+              </TiltCard3D>
+            </ShineEffect>
           </div>
-          <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-            <Link to="/evenimente" className="btn btn-primary" style={{ marginRight: '1rem' }}>
-              Vezi evenimente
-            </Link>
-            <Link to="/meniu" className="btn btn-secondary" style={{ marginRight: '1rem' }}>
-              Vezi meniul
-            </Link>
-            <Link to="/contact" className="btn btn-secondary">
-              Fă o rezervare
-            </Link>
+          <div className="action-buttons-container">
+            <RippleEffect>
+              <Link to="/evenimente" className="btn btn-primary">
+                Vezi evenimente
+              </Link>
+            </RippleEffect>
+            <RippleEffect>
+              <Link to="/meniu" className="btn btn-secondary">
+                Vezi meniul
+              </Link>
+            </RippleEffect>
+            <RippleEffect>
+              <Link to="/contact" className="btn btn-accent">
+                Fă o rezervare
+              </Link>
+            </RippleEffect>
           </div>
         </div>
       </section>

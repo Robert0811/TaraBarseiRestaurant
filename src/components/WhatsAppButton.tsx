@@ -4,7 +4,7 @@ import { MessageCircle, X } from 'lucide-react';
 
 const WhatsAppButton: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const phoneNumber = '+40123456789';
+  const phoneNumber = '+40745105465';
   const defaultMessage = 'Bună ziua! Aș dori să fac o rezervare la Restaurant Țara Bârsei.';
 
   const handleWhatsAppClick = () => {

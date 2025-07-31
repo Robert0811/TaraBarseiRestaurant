@@ -13,10 +13,10 @@ const Footer: React.FC = () => {
                 <MapPin size={16} style={{ display: 'inline', marginRight: '8px' }} />
                 Feldioara, Brașov
               </li>
-              <li>
-                <Phone size={16} style={{ display: 'inline', marginRight: '8px' }} />
-                <a href="tel:+40123456789">+40 123 456 789</a>
-              </li>
+                            <div style={{ display: 'flex', alignItems: 'center', marginBottom: '0.5rem' }}>
+                <Phone size={16} style={{ marginRight: '0.5rem' }} />
+                <a href="tel:+40745105465">(0745) 105 465</a>
+              </div>
               <li>
                 <Mail size={16} style={{ display: 'inline', marginRight: '8px' }} />
                 <a href="mailto:contact@tarabarsei.ro">contact@tarabarsei.ro</a>
