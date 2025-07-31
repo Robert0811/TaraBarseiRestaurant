@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
@@ -8,10 +7,12 @@ import TiltCard from '../components/TiltCard';
 import GlassmorphismCard from '../components/GlassmorphismCard';
 import ParticleSystem from '../components/ParticleSystem';
 import Restaurant3DScene from '../components/Restaurant3DScene';
+import ScrollAnimation from '../components/ScrollAnimation';
+import AdvancedParallax from '../components/AdvancedParallax';
+import TiltCard3D from '../components/TiltCard3D';
 import { Star, Award, Users, Utensils, Car, Wifi, Music, Heart } from 'lucide-react';
 
-const Home: React.FC = () => {
-  const aboutRef = useScrollAnimation();
+const Home = () => {
   const featuresRef = useScrollAnimation();
   const facilitiesRef = useScrollAnimation();
   const statsRef = useScrollAnimation();
@@ -90,39 +91,44 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Despre Noi Section */}
+      {/* Despre Noi Section cu efecte avansate */}
       <section className="section" style={{ background: 'var(--color-cream)' }}>
         <div className="container">
-          <div className={`grid-2 ${aboutRef.isVisible ? 'animate-fadeInUp' : ''}`} ref={aboutRef.ref as React.RefObject<HTMLDivElement>}>
-            <div>
-              <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '2rem' }}>
-                Despre Restaurant Țara Bârsei
-              </h2>
-              <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-                Situat în comuna Feldioara, județul Brașov, Restaurant Țara Bârsei vă oferă o experiență culinară deosebită într-un cadru natural și relaxant. Cu o capacitate de 130 de locuri, restaurantul nostru combină tradițiile culinare românești cu influențe moderne.
-              </p>
-              <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '2rem' }}>
-                Terasa noastră de 70 de locuri, decorată cu o cascadă decorativă și vii de vie, oferă o atmosferă unică pentru mesele în aer liber. Suntem specializați în organizarea evenimentelor private: nunți, botezuri, aniversări și evenimente corporative.
-              </p>
-              <Link to="/restaurant" className="btn btn-primary">
-                Descoperă restaurantul
-              </Link>
-            </div>
-            <div className="grid-2" style={{ gap: '1rem' }}>
-              <div className="image-container">
-                <img 
-                  src="https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg" 
-                  alt="Interior restaurant"
-                />
+          <ScrollAnimation animation="fadeInUp" className="grid-2">
+            <AdvancedParallax speed={0.3} direction="right">
+              <div>
+                <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '2rem' }}>
+                  Despre Restaurant Țara Bârsei
+                </h2>
+                <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+                  Situat în comuna Feldioara, județul Brașov, Restaurant Țara Bârsei vă oferă o experiență culinară deosebită într-un cadru natural și relaxant. Cu o capacitate de 130 de locuri, restaurantul nostru combină tradițiile culinare românești cu influențe moderne.
+                </p>
+                <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '2rem' }}>
+                  Terasa noastră de 70 de locuri, decorată cu o cascadă decorativă și vii de vie, oferă o atmosferă unică pentru mesele în aer liber. Suntem specializați în organizarea evenimentelor private: nunți, botezuri, aniversări și evenimente corporative.
+                </p>
+                <Link to="/restaurant" className="btn btn-primary">
+                  Descoperă restaurantul
+                </Link>
               </div>
-              <div className="image-container">
-                <img 
-                  src="https://images.pexels.com/photos/776538/pexels-photo-776538.jpeg" 
-                  alt="Terasa restaurant"
-                />
+            </AdvancedParallax>
+            
+            <AdvancedParallax speed={0.4} direction="left" className="grid-2">
+              <div style={{ gap: '1rem', display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
+                <TiltCard3D intensity={0.6} glare={true} className="image-container">
+                  <img 
+                    src="https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg" 
+                    alt="Interior restaurant"
+                  />
+                </TiltCard3D>
+                <TiltCard3D intensity={0.6} glare={true} className="image-container">
+                  <img 
+                    src="https://images.pexels.com/photos/776538/pexels-photo-776538.jpeg" 
+                    alt="Terasa restaurant"
+                  />
+                </TiltCard3D>
               </div>
-            </div>
-          </div>
+            </AdvancedParallax>
+          </ScrollAnimation>
         </div>
       </section>
 
